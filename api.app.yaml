@@ -1,2 +1,5 @@
 runtime: nodejs14
 service: api
+handlers:
+- url: /.*
+  static_dir: dist/apps/api
