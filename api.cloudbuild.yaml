@@ -17,6 +17,7 @@ steps:
       'node tools/prepare-gcp-app-engine.js --serviceName=api',
     ]
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  dir: dist/apps/api
   entrypoint: 'bash'
   args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy api.app.yaml']
 options:
