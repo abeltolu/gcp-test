@@ -1,2 +1,4 @@
 runtime: nodejs14
 service: api
+env_variables:
+  'MY_SECRET_KEY=${_MY_SECRET_KEY}'

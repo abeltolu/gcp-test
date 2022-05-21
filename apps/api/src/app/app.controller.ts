@@ -16,6 +16,7 @@ export class AppController {
     return [
       { name: 'Tee', value: 'Test' },
       { name: 'Dee', value: 'Main' },
+      { name: 'Configs', value: process.env },
     ];
   }
 }
