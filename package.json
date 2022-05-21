@@ -5,6 +5,8 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
+    "build-client": "npx nx build client --configuration=production",
+    "build-api": "npx nx build api --configuration=production",
     "test": "nx test"
   },
   "private": true,
