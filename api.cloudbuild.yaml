@@ -7,7 +7,7 @@ steps:
 # Run build
 - name: node
   entrypoint: npm
-  args: ['build-api']
+  args: ['run', 'build-api']
 # Place package.json in api build folder
 - name: node
   entrypoint: bash
