@@ -1,0 +1,25 @@
+# [START cloudbuild_npm_node]
+steps:
+# Install dependencies
+- name: node
+  entrypoint: npm
+  args: ['install']
+# Run build
+- name: node
+  entrypoint: npm
+  args: ['run', 'build-client']
+# Place package.json in client build folder
+- name: node
+  entrypoint: bash
+  args:
+    [
+      '-c',
+      'node tools/prepare-gcp-app-engine.js --serviceName=client',
+    ]
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'bash'
+  args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy dist/apps/client/client.app.yaml']
+options:
+  logging: CLOUD_LOGGING_ONLY
+timeout: '1600s'
+# [END cloudbuild_npm_node]
