@@ -13,6 +13,9 @@ export class AppController {
 
   @Get('all')
   getAll() {
-    return [{ name: 'Tee', value: 'Test' }];
+    return [
+      { name: 'Tee', value: 'Test' },
+      { name: 'Dee', value: 'Main' },
+    ];
   }
 }
